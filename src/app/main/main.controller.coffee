@@ -19,7 +19,7 @@ angular.module 'twitterMicroFront'
 
       ).error (data, status, headers, config) ->
         vm.loading = true
-        console.log "failure"
+        vm.currentSubject = "Something went wrong!"
 
 
     return
