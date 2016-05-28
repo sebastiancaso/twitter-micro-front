@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+
+  <div class="row">
+    <div class="large-12 large-text-center columns">
+      <h1>Click a button to see recent tweets on that topic!</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 centered text-center">
+      <div ng-repeat="hashtag in main.hashtags">
+        <button class=" small-3 small-centered button" ng-click="main.getTweets(hashtag)">{{ hashtag }}</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div ng-hide="main.loading" class="row">
+    <div class="text-center">
+      <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <h3>{{ main.currentSubject }}</h3>
+  </div>
+
+  <div class="row" ng-repeat="tweet in main.tweets">
+    <div>
+      <hp>{{ tweet.tweet_text }}</hp>
+      <hr>
+    </div>
+  </div>
+
+</div>
